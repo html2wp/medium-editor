@@ -165,6 +165,9 @@
             if (tagName === 'a') {
                 this.options.ownerDocument.execCommand('unlink', false, null);
             } else if (!event.shiftKey && !event.ctrlKey) {
+
+                var editorElement = MediumEditor.util.getContainerEditorElement();
+
                 if (MediumEditor.util.isBlockContainer(editorElement)) {
                     this.options.ownerDocument.execCommand('formatBlock', false, 'p');
                 }
