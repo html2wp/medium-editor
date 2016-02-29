@@ -165,7 +165,9 @@
             if (tagName === 'a') {
                 this.options.ownerDocument.execCommand('unlink', false, null);
             } else if (!event.shiftKey && !event.ctrlKey) {
-                this.options.ownerDocument.execCommand('formatBlock', false, 'p');
+                if (MediumEditor.util.isBlockContainer(editorElement)) {
+                    this.options.ownerDocument.execCommand('formatBlock', false, 'p');
+                }
             }
         }
     }
