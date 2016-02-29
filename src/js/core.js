@@ -166,9 +166,9 @@
                 this.options.ownerDocument.execCommand('unlink', false, null);
             } else if (!event.shiftKey && !event.ctrlKey) {
 
-                var editorElement = MediumEditor.util.getContainerEditorElement();
+                var editorElement = MediumEditor.util.getContainerEditorElement(node);
 
-                if (MediumEditor.util.isBlockContainer(editorElement)) {
+                if (!MediumEditor.util.isBlockContainer(editorElement)) {
                     this.options.ownerDocument.execCommand('formatBlock', false, 'p');
                 }
             }
